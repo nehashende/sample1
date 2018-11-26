@@ -43,9 +43,9 @@
             </nav>
             <hr/>
             
-            <audio controls src="/media/examples/t-rex-roar.mp3"> Your browser does not support the<code>audio</code> element.</audio>
+            <!--<audio controls src="/media/examples/t-rex-roar.mp3"> Your browser does not support the<code>audio</code> element.</audio>
             <br>
-            <hr/>
+            <hr/>-->
 
             <select>
                 <option value="">Please select something</option>
@@ -55,7 +55,11 @@
             <hr/>
             
             <div>
-                <button>Click here!</button>
+                <button onclick="console.log(event)">Click here!</button>
+                <button onmousemove="console.log(event)">Move!</button>
+                <button onfocus="console.log(event)">Focus!</button>
+                <button onmousewheel="console.log(event)">Wheel!</button>
+                <button onmousemove="console.log(event)">Click here!</button>
             </div>
             
         </form>
