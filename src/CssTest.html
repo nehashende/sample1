@@ -22,7 +22,11 @@
             {
                 background-color: chartreuse;
                 border: 2px solid;
+                border-style: dotted;
+                flex:1;
             }
+            
+            
             p:nth-child(1)
             {
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -57,38 +61,62 @@
             p
             {
                 background-color: aqua;
+                text-align: center;
+                overflow: hidden;
             }
 
             div
             {
                 color: green;
             }
-            .container-fluid-1
+            
+            .container-fluid-1::before
             {
                 color:inherit;
+                content: ".";
+            
             }
             .container-fluid-2
             {
                 color:initial;
+
             }
             .container-fluid-3
             {
                 color:unset;
             }
+            dialog:hover
+            {
+                color: blueviolet;
+                font-style: italic;
+                border: 2px dashed;
+            }
+            @media screen and (max-width : 500px)
+            {
+                #div1
+                {
+                    width: 100%;
+                }
+            }
         </style>
     </head>
     <body>
+        <div id="div1">
         
-        <p>This is a test</p>
+        <p style="padding:20px;">This is a test</p>
         <p>Also test</p>
         <p class="well">Test 2</p>
         <p class="well" id="p3">Test 3</p>
         <hr/>
 
+        <dialog open>Hello!</dialog>
+
         <div>
             <h4 class="container-fluid-1">Testing inheritance!</h4>
             <h4 class="container-fluid-2">Testing inheritance!</h4>
             <h4 class="container-fluid-3">Testing inheritance!</h4>
+        </div>
+
         </div>
 
     </body>
