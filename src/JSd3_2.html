@@ -1,0 +1,51 @@
+<script>
+
+    //Object creation
+    //type: using new keyword
+    var o = new Object();
+    o.make = "neha";
+    console.log(o);
+
+
+    //Object creation
+    //type: using create method
+    var Ob = {
+        t:'neha', type: function() {
+            console.log(this.t);
+        }
+    }
+
+    var obj = Object.create(Ob);
+    obj.type();
+
+    var obj1 = Object.create(Ob);
+    obj1.t = 'jhdd';
+    obj1.type();
+
+
+    //Object creation
+    //type: using constructor
+    function Car(make, model, year)
+    {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+    var kenscar = new Car('Nissan', '300ZX', 1992);
+    console.log(kenscar);
+
+    //Object creation
+    //type: separated by commas
+    var myObj = new Object(), str = 'myString', rand = Math.random(), obj = new Object();
+
+    myObj.type              = 'Dot syntax';
+    myObj['date created']   = 'String with space';
+    myObj[str]              = 'String value';
+    myObj[rand]             = 'Random Number';
+    myObj[obj]              = 'Object';
+    myObj['']               = 'Even an empty string';
+
+    console.log(myObj);
+
+
+</script>
