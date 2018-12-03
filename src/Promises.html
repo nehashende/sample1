@@ -1,0 +1,52 @@
+<html>
+    <body>
+        <div>
+            <img id = "i"/>
+            <span id="span1">Loading..</span>
+        </div>
+        <script>
+            function outerFunction()
+            {
+                function imgLoadComp()
+                {
+                    let span1 = document.getElementById("span1");
+                    span1.style.display = "none";
+                }
+
+                let testImg = document.getElementById("i");
+                testImg.onload = imgLoadComp;
+                testImg.src = "https://www.google.co.in/logos/doodles/2018/celebrating-400o-of-murillo-5901104519839744-l.png";
+            }
+
+            outerFunction();
+
+            let getPromise = function()
+            {
+                return new Promise(function(v,j)
+                {
+                    var scondition = false;
+                    if(scondition)
+                    {
+                        resolve();
+                    }
+                    else
+                    {
+                        reject();
+                    }
+                });
+            };
+
+            getPromise().then(
+                function()
+                {
+                    console.log("In then() for resolve");
+                },
+                function()
+                {
+                    console.log("In second arg of then() for reject");
+                }
+            );
+
+        </script>
+    </body>
+</html>

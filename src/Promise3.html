@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <script>
+
+            var p2 = Promise.resolve(23);
+            var p3 = 21;
+
+            var p1 = new Promise(function(resolve,reject)
+            {
+                if(true)
+                {
+                    resolve("NEHA");
+                }
+                else
+                {
+                    reject();
+                }
+            })         
+
+            Promise.all([p1,p2,p3]).then(
+                function(values)
+                {
+                    console.log(values);
+                }
+            );
+
+        </script>
+    </body>
+</html>

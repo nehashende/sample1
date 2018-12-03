@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Promise in Javascript</title>
+    </head>
+    <body>
+        <img id = "imageTag">
+        <span id = "sp">Loading...</span>
+
+        <script>
+            function outerFunction()
+            {
+                function innerFunction()
+                {
+                    let sp = document.getElementById("sp");
+                    sp.style.display = "none";
+                }
+                imageTag = document.getElementById("imageTag");
+                imageTag.onload = innerFunction();
+                imageTag.src = "https://www.google.co.in/logos/doodles/2018/celebrating-400o-of-murillo-5901104519839744-l.png";
+            }
+            outerFunction();
+
+            let getMult = function (num1, num2)
+            {
+                return new Promise(function(resolve,reject)
+                {
+                    let validNums = num1 !== undefined && num2 !== undefined;
+                    let pos = num1 > 0 && num2 > 0;
+                    if(validNums && pos)
+                    {
+                        let result = num1 * num2;
+                        setTimeout(()=>resolve(result),10000);
+                    }
+                    else
+                    {
+                        let message = "default";
+                        if(!validNums)
+                        {
+                            message = "numbers are invalid";
+                        }
+                        if(!pos)
+                        {
+                            message = "numbers are negative";
+                        }
+                        reject(message);
+                    }
+                })
+            }
+
+            getMult(2,3).then(
+                function(work)
+                {
+                    console.log(work);
+                },
+                function(respMsg)
+                {
+                    console.log(respMsg);
+                }
+            )
+
+        </script>
+
+    </body>
+</html>
